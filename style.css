@@ -1,0 +1,187 @@
+:root {
+    --bg-dark-red: #0a0000;
+    --vicius-red: #ff0000;
+    --deep-blue: #0033ff;
+    --gold: #d4af37;
+    --gold-bright: #ffcc33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark-red);
+    color: #ffffff;
+    font-family: 'Philosopher', sans-serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND VERMELHO COM SÍMBOLOS */
+.bg-red {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at center, #200000 0%, #050000 100%);
+    z-index: -3;
+}
+
+.symbols-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -2;
+}
+
+.symbol {
+    position: absolute;
+    font-family: 'Noto Serif JP', serif;
+    color: rgba(255, 0, 0, 0.12);
+    font-weight: 900;
+    animation: float 15s ease-in-out infinite;
+}
+
+.s1 { top: 5%; left: 5%; font-size: 15rem; }
+.s2 { top: 20%; right: 10%; font-size: 10rem; }
+.s3 { bottom: 15%; left: 10%; font-size: 18rem; }
+.s4 { bottom: 10%; right: 5%; font-size: 12rem; }
+.s5 { top: 40%; left: 45%; font-size: 7rem; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); opacity: 0.1; }
+    50% { transform: translateY(-40px); opacity: 0.2; }
+}
+
+.fate-thread {
+    position: fixed;
+    top: 0; left: 50%;
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    box-shadow: 0 0 15px var(--gold-bright);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* CONTEÚDO */
+.main-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 150px;
+}
+
+.vicius-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 5rem;
+    color: var(--vicius-red);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    margin-bottom: 30px;
+}
+
+.blue-glow-box {
+    background: rgba(0, 10, 40, 0.6);
+    padding: 30px;
+    border-left: 5px solid var(--deep-blue);
+    box-shadow: 0 0 30px rgba(0, 51, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.secondary-goal {
+    color: var(--gold-bright) !important;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 51, 255, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 20px !important;
+}
+
+.blue-glow-box p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.main-portrait {
+    width: 450px;
+    border: 1px solid var(--deep-blue);
+    box-shadow: 0 0 40px rgba(0, 51, 255, 0.3);
+}
+
+/* STORY ROWS */
+.story-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.story-row.reverse { flex-direction: row-reverse; }
+
+.story-text { flex: 2; }
+
+.side-image-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.side-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 4px;
+}
+
+.blue-glow-img {
+    border: 2px solid var(--deep-blue);
+    box-shadow: 0 0 20px rgba(0, 51, 255, 0.4);
+}
+
+.img-label {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Cinzel Decorative', serif;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.story-block {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.blue-border {
+    border-left: 4px solid var(--deep-blue);
+}
+
+.full-width { width: 100%; margin-bottom: 60px; }
+
+/* O JURAMENTO */
+.oath-highlight {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 80px 40px;
+    border: 2px solid var(--gold);
+    text-align: center;
+}
+
+.oath-highlight p {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--gold-bright);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    line-height: 1.6;
+}
+
+.gold-text { color: var(--gold-bright); }
+
+@media (max-width: 1000px) {
+    .hero-section, .story-row, .story-row.reverse { flex-direction: column; text-align: center; }
+    .main-portrait, .side-img { width: 100%; }
+}
